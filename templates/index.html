@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="relative w-full h-[80vh] bg-brand-charcoal overflow-hidden">
+    <!-- Hero Image -->
+    <div class="absolute inset-0 bg-cover bg-center opacity-60 mix-blend-overlay" style="background-image: url('/static/images/hero.png');"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-brand-charcoal/30 to-brand-charcoal/80"></div>
+    
+    <div class="relative h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-center items-center text-center">
+        <h1 class="text-brand-ivory text-5xl md:text-7xl font-serif tracking-wide mb-6 fade-in">Elegance in Every Thread</h1>
+        <p class="text-brand-champagne text-lg md:text-xl font-light max-w-2xl mb-10 fade-in">Discover the pinnacle of modern luxury bridal wear. Oyil Boutique curates exclusive collections for your unforgettable day.</p>
+        <div class="fade-in">
+            <a href="/lookbook" class="inline-block bg-brand-ivory text-brand-charcoal px-10 py-4 uppercase tracking-widest text-sm hover:bg-brand-champagne transition-colors duration-300">Explore Collection</a>
+        </div>
+    </div>
+</div>
+
+<div class="py-24 bg-brand-ivory">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl font-serif mb-16 fade-in">The Oyil Experience</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div class="fade-in">
+                <div class="w-16 h-16 mx-auto border border-brand-gold rounded-full flex items-center justify-center mb-6">
+                    <span class="text-brand-gold text-2xl font-serif">I</span>
+                </div>
+                <h3 class="text-xl font-medium tracking-wide mb-4">Curated Selection</h3>
+                <p class="text-gray-600 font-light leading-relaxed">Handpicked designer gowns from the world's most prestigious bridal fashion houses.</p>
+            </div>
+            <div class="fade-in">
+                <div class="w-16 h-16 mx-auto border border-brand-gold rounded-full flex items-center justify-center mb-6">
+                    <span class="text-brand-gold text-2xl font-serif">II</span>
+                </div>
+                <h3 class="text-xl font-medium tracking-wide mb-4">Private Fittings</h3>
+                <p class="text-gray-600 font-light leading-relaxed">Enjoy an intimate, personalized consultation in our luxury private suites.</p>
+            </div>
+            <div class="fade-in">
+                <div class="w-16 h-16 mx-auto border border-brand-gold rounded-full flex items-center justify-center mb-6">
+                    <span class="text-brand-gold text-2xl font-serif">III</span>
+                </div>
+                <h3 class="text-xl font-medium tracking-wide mb-4">Expert Alterations</h3>
+                <p class="text-gray-600 font-light leading-relaxed">Master seamstresses ensure your gown fits flawlessly for your momentous walk down the aisle.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Promotional Banner -->
+<div class="relative py-32 bg-brand-champagne">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+        <h2 class="text-brand-charcoal text-4xl font-serif mb-8 fade-in">Begin Your Journey</h2>
+        <p class="text-brand-charcoal/90 text-lg mb-10 font-light fade-in">Secure your private appointment and let us help you find the gown of your dreams.</p>
+        <a href="/book-appointment" class="inline-block border border-brand-charcoal text-brand-charcoal px-12 py-4 uppercase tracking-widest text-sm hover:bg-brand-charcoal hover:text-brand-champagne transition-all duration-300 fade-in">Book Now</a>
+    </div>
+</div>
+{% endblock %}

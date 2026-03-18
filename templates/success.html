@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Success | Oyil Boutique{% endblock %}
+
+{% block content %}
+<div class="min-h-[60vh] flex items-center justify-center bg-brand-ivory py-20">
+    <div class="max-w-2xl mx-auto px-4 text-center fade-in">
+        <div class="w-20 h-20 mx-auto rounded-full bg-green-50 flex items-center justify-center mb-8">
+            <svg class="h-10 w-10 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+        </div>
+        <h1 class="text-4xl font-serif mb-6">{{ message }}</h1>
+        <p class="text-gray-500 font-light mb-10">We appreciate your interest in Oyil Boutique.</p>
+        <a href="/" class="inline-block border border-brand-charcoal text-brand-charcoal px-10 py-3 uppercase tracking-widest text-sm hover:bg-brand-charcoal hover:text-brand-ivory transition-all duration-300">
+            Return to Home
+        </a>
+    </div>
+</div>
+{% endblock %}

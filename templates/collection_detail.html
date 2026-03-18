@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}{{ collection['title'] }} | Oyil Boutique{% endblock %}
+
+{% block content %}
+<!-- Collection Hero -->
+<div class="relative w-full h-[60vh] bg-brand-charcoal overflow-hidden fade-in">
+    <div class="absolute inset-0 bg-cover bg-center opacity-70 mix-blend-overlay" style="background-image: url('{{ collection["hero"] }}');"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal/90 to-transparent"></div>
+    <div class="relative h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-end pb-16">
+        <h1 class="text-brand-ivory text-5xl md:text-6xl font-serif tracking-wide mb-4">{{ collection['title'] }}</h1>
+        <p class="text-brand-champagne text-lg font-light max-w-2xl">{{ collection['description'] }}</p>
+    </div>
+</div>
+
+<!-- Collection Items -->
+<div class="py-24 min-h-screen">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+            {% for item in collection['items'] %}
+            <div class="group fade-in bg-white border border-brand-champagne shadow-sm overflow-hidden flex flex-col">
+                <div class="relative h-[500px] overflow-hidden">
+                    <img src="{{ item['image'] }}" alt="{{ item['name'] }}" class="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105">
+                </div>
+                <div class="p-8 text-center bg-white relative z-10 flex-grow flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-serif text-xl mb-3 text-brand-charcoal">{{ item['name'] }}</h3>
+                        <p class="text-brand-gold tracking-widest">{{ item['price'] }}</p>
+                        {% if item.get('material') %}
+                        <div class="mt-4 pt-4 border-t border-brand-champagne/50 text-sm text-left">
+                            <p class="text-brand-charcoal/80 font-light mb-1"><span class="font-medium text-brand-charcoal uppercase text-xs tracking-widest">Material:</span><br> {{ item['material'] }}</p>
+                            <p class="text-brand-charcoal/80 font-light"><span class="font-medium text-brand-charcoal uppercase text-xs tracking-widest">Care:</span><br> {{ item['care'] }}</p>
+                        </div>
+                        {% endif %}
+                    </div>
+                    <div class="mt-6">
+                        <a href="/book-appointment" class="inline-block text-xs uppercase tracking-widest border-b border-brand-charcoal text-brand-charcoal hover:text-brand-gold hover:border-brand-gold transition-colors pb-1">Inquire Now</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        
+        <div class="text-center mt-20 fade-in">
+            <a href="/lookbook" class="inline-block border border-brand-charcoal text-brand-charcoal px-10 py-3 uppercase tracking-widest text-sm hover:bg-brand-charcoal hover:text-brand-ivory transition-all duration-300">Back to Lookbook</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

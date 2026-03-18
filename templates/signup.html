@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}Sign Up | Oyil Boutique{% endblock %}
+
+{% block content %}
+<div class="py-24 flex items-center justify-center min-h-[80vh]">
+    <div class="bg-white/80 backdrop-blur-md p-10 md:p-14 shadow-sm border border-brand-champagne max-w-lg w-full fade-in">
+        <div class="text-center mb-10">
+            <h1 class="text-4xl font-serif mb-4 text-brand-charcoal">Create Account</h1>
+            <p class="text-gray-500 font-light">Join us to access exclusive collections, save your wishlist, and manage appointments.</p>
+        </div>
+
+        <form action="/signup" method="POST" class="space-y-6">
+            <div>
+                <label for="name" class="block text-sm uppercase tracking-widest text-brand-charcoal mb-2">Full Name</label>
+                <input type="text" id="name" name="name" required class="w-full bg-transparent border-b border-gray-300 py-2 focus:outline-none focus:border-brand-gold transition-colors font-light text-brand-charcoal">
+            </div>
+
+            <div>
+                <label for="identifier" class="block text-sm uppercase tracking-widest text-brand-charcoal mb-2">Email or Phone Number</label>
+                <input type="text" id="identifier" name="identifier" required class="w-full bg-transparent border-b border-gray-300 py-2 focus:outline-none focus:border-brand-gold transition-colors font-light text-brand-charcoal">
+            </div>
+            
+            <div>
+                <label for="password" class="block text-sm uppercase tracking-widest text-brand-charcoal mb-2">Password</label>
+                <input type="password" id="password" name="password" required class="w-full bg-transparent border-b border-gray-300 py-2 focus:outline-none focus:border-brand-gold transition-colors font-light text-brand-charcoal">
+            </div>
+
+            <div class="pt-6 text-center">
+                <button type="submit" class="bg-brand-charcoal text-brand-ivory px-12 py-4 uppercase tracking-widest text-sm hover:bg-brand-champagne hover:text-brand-charcoal transition-colors duration-300 w-full">
+                    Register
+                </button>
+            </div>
+        </form>
+        
+        <div class="mt-8 text-center text-sm font-light text-gray-500">
+            Already have an account? <a href="/login" class="text-brand-gold hover:underline">Sign In</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

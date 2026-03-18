@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block title %}Contact Us | Oyil Boutique{% endblock %}
+
+{% block content %}
+<div class="bg-brand-ivory py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 fade-in">
+            <h1 class="text-5xl font-serif mb-4">Get in Touch</h1>
+            <p class="text-gray-500 font-light max-w-2xl mx-auto">Whether you have a question about our collections or need assistance with your order, we are here to help.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            <!-- Contact Info -->
+            <div class="fade-in">
+                <h3 class="font-serif text-3xl mb-8">Boutique Information</h3>
+                
+                <div class="space-y-8">
+                    <div>
+                        <h4 class="text-sm uppercase tracking-widest text-brand-gold mb-2">Visit Us</h4>
+                        <p class="text-gray-600 font-light leading-relaxed">
+                            Oyil Boutique<br>
+                            Reliance Building, 1, 2A<br>
+                            Anna Nagar Main Road<br>
+                            Madurai, Tamil Nadu - 625020
+                        </p>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-sm uppercase tracking-widest text-brand-gold mb-2">Boutique Hours</h4>
+                        <p class="text-gray-600 font-light leading-relaxed">
+                            Tuesday - Sunday: 10:00 AM - 9:00 PM<br>
+                            Monday: Closed
+                        </p>
+                    </div>
+
+                    <div>
+                        <h4 class="text-sm uppercase tracking-widest text-brand-gold mb-2">Direct Contact</h4>
+                        <p class="text-gray-600 font-light leading-relaxed">
+                            Phone: (+91) 85248 90839<br>
+                            Email: support@oyilboutique.com
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="bg-white p-10 md:p-14 shadow-sm border border-brand-champagne fade-in">
+                <form action="/contact" method="POST" class="space-y-8">
+                    <div>
+                        <label for="name" class="block text-sm uppercase tracking-widest text-brand-charcoal mb-2">Full Name</label>
+                        <input type="text" id="name" name="name" required class="w-full bg-transparent border-b border-gray-300 py-2 focus:outline-none focus:border-brand-gold transition-colors font-light text-brand-charcoal">
+                    </div>
+                    
+                    <div>
+                        <label for="email" class="block text-sm uppercase tracking-widest text-brand-charcoal mb-2">Email Address</label>
+                        <input type="email" id="email" name="email" required class="w-full bg-transparent border-b border-gray-300 py-2 focus:outline-none focus:border-brand-gold transition-colors font-light text-brand-charcoal">
+                    </div>
+                    
+                    <div>
+                        <label for="subject" class="block text-sm uppercase tracking-widest text-brand-charcoal mb-2">Subject</label>
+                        <input type="text" id="subject" name="subject" required class="w-full bg-transparent border-b border-gray-300 py-2 focus:outline-none focus:border-brand-gold transition-colors font-light text-brand-charcoal">
+                    </div>
+
+                    <div>
+                        <label for="message" class="block text-sm uppercase tracking-widest text-brand-charcoal mb-2">Message</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="How can we assist you today?" class="w-full bg-transparent border-b border-gray-300 py-2 focus:outline-none focus:border-brand-gold transition-colors font-light text-brand-charcoal resize-none"></textarea>
+                    </div>
+
+                    <div class="pt-4">
+                        <button type="submit" class="bg-brand-charcoal text-brand-ivory px-10 py-4 uppercase tracking-widest text-sm hover:bg-brand-gold transition-colors duration-300 w-full">
+                            Send Message
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

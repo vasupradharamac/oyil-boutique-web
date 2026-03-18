@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}Login | Oyil Boutique{% endblock %}
+
+{% block content %}
+<div class="py-24 flex items-center justify-center min-h-[80vh]">
+    <div class="bg-white/80 backdrop-blur-md p-10 md:p-14 shadow-sm border border-brand-champagne max-w-lg w-full fade-in">
+        <div class="text-center mb-10">
+            <h1 class="text-4xl font-serif mb-4 text-brand-charcoal">Welcome Back</h1>
+            <p class="text-gray-500 font-light">Sign in with your email or phone number to access your exclusive wishlist.</p>
+        </div>
+
+        <form action="/login" method="POST" class="space-y-6">
+            <div>
+                <label for="identifier" class="block text-sm uppercase tracking-widest text-brand-charcoal mb-2">Email or Phone Number</label>
+                <input type="text" id="identifier" name="identifier" required class="w-full bg-transparent border-b border-gray-300 py-2 focus:outline-none focus:border-brand-gold transition-colors font-light text-brand-charcoal">
+            </div>
+            
+            <div>
+                <label for="password" class="block text-sm uppercase tracking-widest text-brand-charcoal mb-2">Password</label>
+                <input type="password" id="password" name="password" required class="w-full bg-transparent border-b border-gray-300 py-2 focus:outline-none focus:border-brand-gold transition-colors font-light text-brand-charcoal">
+            </div>
+
+            <div class="flex items-center justify-between mt-4">
+                <label class="flex items-center text-sm text-gray-500 font-light cursor-pointer">
+                    <input type="checkbox" class="mr-2 border-gray-300 text-brand-charcoal focus:ring-brand-gold cursor-pointer"> Remember me
+                </label>
+                <a href="#" class="text-sm font-light text-brand-gold hover:underline">Forgot password?</a>
+            </div>
+
+            <div class="pt-6 text-center">
+                <button type="submit" class="bg-brand-charcoal text-brand-ivory px-12 py-4 uppercase tracking-widest text-sm hover:bg-brand-champagne hover:text-brand-charcoal transition-colors duration-300 w-full">
+                    Sign In
+                </button>
+            </div>
+        </form>
+        
+        <div class="mt-8 text-center text-sm font-light text-gray-500">
+            Don't have an account? <a href="/signup" class="text-brand-gold hover:underline">Sign Up</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

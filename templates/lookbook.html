@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+{% block title %}Digital Lookbook | Oyil Boutique{% endblock %}
+
+{% block content %}
+<div class="py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h1 class="text-4xl font-serif mb-4 fade-in">Our Collections</h1>
+            <p class="text-gray-500 font-light max-w-xl mx-auto fade-in">Explore our curated range of luxury Indian womenswear — for every occasion and every woman.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Sarees -->
+            <a href="/collection/sarees" class="group cursor-pointer fade-in block">
+                <div class="relative overflow-hidden w-full h-[600px]">
+                    <img src="/static/images/sarees.png" alt="Sarees" class="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-brand-charcoal/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div class="py-4 text-center">
+                    <h3 class="font-serif text-xl mb-1 text-brand-charcoal">Sarees</h3>
+                    <p class="text-sm font-light text-gray-500 tracking-wider uppercase">Classic Elegance</p>
+                </div>
+            </a>
+            
+            <!-- Salwars -->
+            <a href="/collection/salwars" class="group cursor-pointer fade-in block">
+                <div class="relative overflow-hidden w-full h-[600px]">
+                    <img src="/static/images/salwars.png" alt="Salwars" class="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-brand-charcoal/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div class="py-4 text-center">
+                    <h3 class="font-serif text-xl mb-1 text-brand-charcoal">Salwars</h3>
+                    <p class="text-sm font-light text-gray-500 tracking-wider uppercase">Modern Comfort</p>
+                </div>
+            </a>
+            
+            <!-- Half Sarees -->
+            <a href="/collection/halfsarees" class="group cursor-pointer fade-in block">
+                <div class="relative overflow-hidden w-full h-[600px]">
+                    <img src="/static/images/halfsarees.png" alt="Half Sarees" class="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-brand-charcoal/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div class="py-4 text-center">
+                    <h3 class="font-serif text-xl mb-1 text-brand-charcoal">Half Sarees</h3>
+                    <p class="text-sm font-light text-gray-500 tracking-wider uppercase">Traditional Roots</p>
+                </div>
+            </a>
+
+            <!-- Kids -->
+            <a href="/collection/kids" class="group cursor-pointer fade-in block">
+                <div class="relative overflow-hidden w-full h-[600px]">
+                    <img src="/static/images/kids.png" alt="Kids Collection" class="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-brand-charcoal/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div class="py-4 text-center">
+                    <h3 class="font-serif text-xl mb-1 text-brand-charcoal">Kids</h3>
+                    <p class="text-sm font-light text-gray-500 tracking-wider uppercase">Little Wonders</p>
+                </div>
+            </a>
+
+             <!-- Festive Collections -->
+             <a href="/collection/festive" class="group cursor-pointer fade-in block">
+                <div class="relative overflow-hidden w-full h-[600px]">
+                    <img src="/static/images/festive.png" alt="Festive Collections" class="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-brand-charcoal/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div class="py-4 text-center">
+                    <h3 class="font-serif text-xl mb-1 text-brand-charcoal">Festive Collections</h3>
+                    <p class="text-sm font-light text-gray-500 tracking-wider uppercase">Special Occasions</p>
+                </div>
+            </a>
+
+            <!-- Bridal Wears -->
+            <a href="/collection/bridal" class="group cursor-pointer fade-in block">
+                <div class="relative overflow-hidden w-full h-[600px]">
+                    <img src="/static/images/bridal.png" alt="Bridal Wears" class="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-brand-charcoal/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div class="py-4 text-center">
+                    <h3 class="font-serif text-xl mb-1 text-brand-charcoal">Bridal Wears</h3>
+                    <p class="text-sm font-light text-gray-500 tracking-wider uppercase">Your Big Day</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

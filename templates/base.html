@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Oyil Boutique | Luxury Bridal Wear{% endblock %}</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <!-- Tailwind Output -->
+    <link href="/static/css/output.css" rel="stylesheet">
+    <script src="/static/js/main.js" defer></script>
+</head>
+<body class="antialiased flex flex-col min-h-screen bg-brand-ivory" style="background-image: url('/static/images/pattern.png'); background-repeat: repeat; background-attachment: fixed; background-size: 500px;">
+    
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-300 bg-brand-ivory/90 backdrop-blur-sm border-b border-brand-champagne" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="/" class="font-serif text-3xl font-semibold tracking-wide text-brand-charcoal">
+                        Oyil
+                    </a>
+                </div>
+                <!-- Links -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="/" class="text-sm uppercase tracking-widest hover:text-brand-gold transition-colors">Home</a>
+                    <a href="/lookbook" class="text-sm uppercase tracking-widest hover:text-brand-gold transition-colors">Lookbook</a>
+                    <a href="/contact" class="text-sm uppercase tracking-widest hover:text-brand-gold transition-colors">Contact</a>
+                    {% if request.cookies.get("user_session") %}
+                    <a href="/logout" class="text-sm uppercase tracking-widest hover:text-brand-gold transition-colors">Logout ({{ request.cookies.get("user_session") }})</a>
+                    {% else %}
+                    <a href="/login" class="text-sm uppercase tracking-widest hover:text-brand-gold transition-colors">Login / Sign Up</a>
+                    {% endif %}
+                    <a href="/book-appointment" class="px-6 py-2 border border-brand-charcoal text-sm uppercase tracking-widest hover:bg-brand-charcoal hover:text-brand-ivory transition-all duration-300">Book Appointment</a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-brand-charcoal focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-brand-ivory border-t border-brand-champagne pb-4">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="/" class="block px-3 py-2 text-base font-medium text-brand-charcoal hover:text-brand-gold">Home</a>
+                <a href="/lookbook" class="block px-3 py-2 text-base font-medium text-brand-charcoal hover:text-brand-gold">Lookbook</a>
+                <a href="/contact" class="block px-3 py-2 text-base font-medium text-brand-charcoal hover:text-brand-gold">Contact</a>
+                {% if request.cookies.get("user_session") %}
+                <a href="/logout" class="block px-3 py-2 text-base font-medium text-brand-charcoal hover:text-brand-gold">Logout</a>
+                {% else %}
+                <a href="/login" class="block px-3 py-2 text-base font-medium text-brand-charcoal hover:text-brand-gold">Login / Sign Up</a>
+                {% endif %}
+                <a href="/book-appointment" class="block px-3 py-2 text-base font-medium text-brand-charcoal hover:text-brand-gold font-serif italic">Book Appointment</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow pt-20">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-charcoal text-brand-ivory py-16 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div>
+                <h3 class="font-serif text-2xl mb-6">Oyil Boutique</h3>
+                <p class="text-gray-400 font-light leading-relaxed">Presenting a wide range of exclusive designer wear for women: for special events as well as casual occasions.</p>
+            </div>
+            <div>
+                <h4 class="uppercase tracking-widest mb-6 font-medium">Quick Links</h4>
+                <ul class="space-y-4 text-gray-400 font-light">
+                    <li><a href="/lookbook" class="hover:text-brand-gold transition-colors">Digital Lookbook</a></li>
+                    <li><a href="/book-appointment" class="hover:text-brand-gold transition-colors">Book an Appointment</a></li>
+                    <li><a href="/contact" class="hover:text-brand-gold transition-colors">Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="uppercase tracking-widest mb-6 font-medium">Visit Us</h4>
+                <p class="text-gray-400 font-light leading-relaxed">
+                    Reliance Building, 1, 2A<br>
+                    Anna Nagar Main Road<br>
+                    Madurai, Tamil Nadu - 625020<br><br>
+                    Phone: (+91) 85248 90839<br>
+                    Email: support@oyilboutique.com
+                </p>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-8 border-t border-gray-700 text-center text-gray-500 font-light">
+            &copy; 2026 Oyil Boutique. All rights reserved.
+        </div>
+    </footer>
+</body>
+</html>
