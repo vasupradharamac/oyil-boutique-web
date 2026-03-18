@@ -1,33 +1,23 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-ivory: #FFFFF0;
-  --color-brand-champagne: #E4D0A4;
-  --color-brand-gold: #D4AF37;
-  --color-brand-charcoal: #333333;
-  --color-brand-dusty-rose: #DCAE96;
-  --font-primary: "Inter", sans-serif;
-  --font-serif: "Playfair Display", serif;
+  --color-brand-cream: #F5EFE4;
+  --color-brand-ivory: #FAF8F4;
+  --color-brand-green: #2D4A1E;
+  --color-brand-gold: #8B6914;
+  --color-brand-charcoal: #1A1A1A;
+  --color-brand-gray: #666666;
+
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Montserrat", system-ui, sans-serif;
 }
 
-@layer base {
-  body {
-    @apply text-brand-charcoal bg-brand-ivory font-primary;
-  }
-  
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-serif;
-  }
-}
-
-/* Custom micro-animations */
 @layer utilities {
   .fade-in {
     opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    transform: translateY(12px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
   }
-  
   .fade-in.visible {
     opacity: 1;
     transform: translateY(0);

@@ -3,47 +3,54 @@
 {% block title %}{{ collection['title'] }} | Oyil Boutique{% endblock %}
 
 {% block content %}
-<!-- Collection Hero -->
-<div class="relative w-full h-[60vh] bg-brand-charcoal overflow-hidden fade-in">
-    <div class="absolute inset-0 bg-cover bg-center opacity-70 mix-blend-overlay" style="background-image: url('{{ collection["hero"] }}');"></div>
-    <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal/90 to-transparent"></div>
-    <div class="relative h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-end pb-16">
-        <h1 class="text-brand-ivory text-5xl md:text-6xl font-serif tracking-wide mb-4">{{ collection['title'] }}</h1>
-        <p class="text-brand-champagne text-lg font-light max-w-2xl">{{ collection['description'] }}</p>
-    </div>
-</div>
 
-<!-- Collection Items -->
-<div class="py-24 min-h-screen">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+<!-- Collection Hero -->
+<section style="position:relative; width:100%; height:80vh; overflow:hidden; background:#0a0a0a;">
+    <img src="{{ collection['hero'] }}" alt="{{ collection['title'] }}" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; opacity:0.8;">
+    <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.15) 60%, transparent 100%);"></div>
+    <div style="position:absolute; bottom:60px; left:60px; color:#fff;">
+        <p style="font-family:'Montserrat',sans-serif; font-size:10px; letter-spacing:4px; text-transform:uppercase; margin-bottom:12px; opacity:0.8;">Oyil Boutique</p>
+        <h1 style="font-family:'Cormorant Garamond',serif; font-size:clamp(42px,6vw,90px); font-weight:300; font-style:italic; line-height:1.0; margin-bottom:16px;">{{ collection['title'] }}</h1>
+        <p style="font-family:'Montserrat',sans-serif; font-size:12px; letter-spacing:1px; max-width:480px; line-height:1.8; opacity:0.8;">{{ collection['description'] }}</p>
+    </div>
+</section>
+
+<!-- Product Grid -->
+<section style="background:#F5EFE4; padding: 72px 32px 80px;">
+    <div style="max-width:1200px; margin:0 auto;">
+        <div style="display:grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 56px;">
             {% for item in collection['items'] %}
-            <div class="group fade-in bg-white border border-brand-champagne shadow-sm overflow-hidden flex flex-col">
-                <div class="relative h-[500px] overflow-hidden">
-                    <img src="{{ item['image'] }}" alt="{{ item['name'] }}" class="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105">
+            <div class="fade-in" style="position:relative;">
+                <div style="overflow:hidden; aspect-ratio:3/4; background:#e8e0d4; position:relative;" 
+                     onmouseover="this.querySelector('.overlay').style.opacity='1'" 
+                     onmouseout="this.querySelector('.overlay').style.opacity='0'">
+                    <img src="{{ item['image'] }}" alt="{{ item['name'] }}" style="width:100%; height:100%; object-fit:cover; transition:transform 0.7s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                    <div class="overlay" style="position:absolute; inset:0; background:rgba(0,0,0,0.35); opacity:0; transition:opacity 0.3s; display:flex; align-items:flex-end; justify-content:center; padding-bottom:28px;">
+                        <a href="/book-appointment" style="background:#fff; color:#1A1A1A; font-family:'Montserrat',sans-serif; font-size:10px; font-weight:600; letter-spacing:2px; text-transform:uppercase; padding:12px 28px; text-decoration:none;">Inquire Now</a>
+                    </div>
                 </div>
-                <div class="p-8 text-center bg-white relative z-10 flex-grow flex flex-col justify-between">
-                    <div>
-                        <h3 class="font-serif text-xl mb-3 text-brand-charcoal">{{ item['name'] }}</h3>
-                        <p class="text-brand-gold tracking-widest">{{ item['price'] }}</p>
-                        {% if item.get('material') %}
-                        <div class="mt-4 pt-4 border-t border-brand-champagne/50 text-sm text-left">
-                            <p class="text-brand-charcoal/80 font-light mb-1"><span class="font-medium text-brand-charcoal uppercase text-xs tracking-widest">Material:</span><br> {{ item['material'] }}</p>
-                            <p class="text-brand-charcoal/80 font-light"><span class="font-medium text-brand-charcoal uppercase text-xs tracking-widest">Care:</span><br> {{ item['care'] }}</p>
-                        </div>
-                        {% endif %}
-                    </div>
-                    <div class="mt-6">
-                        <a href="/book-appointment" class="inline-block text-xs uppercase tracking-widest border-b border-brand-charcoal text-brand-charcoal hover:text-brand-gold hover:border-brand-gold transition-colors pb-1">Inquire Now</a>
-                    </div>
+                <div style="padding: 14px 4px 8px;">
+                    <p style="font-family:'Montserrat',sans-serif; font-size:10px; font-weight:500; letter-spacing:2px; text-transform:uppercase; color:#1A1A1A; margin-bottom:4px;">{{ item['name'] }}</p>
+                    <p style="font-family:'Montserrat',sans-serif; font-size:13px; color:#8B6914; margin-bottom:8px;">{{ item['price'] }}</p>
+                    {% if item.get('material') %}
+                    <p style="font-family:'Montserrat',sans-serif; font-size:10px; color:#888; line-height:1.7;"><strong style="color:#555; letter-spacing:1px; text-transform:uppercase; font-size:9px;">Material:</strong> {{ item['material'] }}</p>
+                    <p style="font-family:'Montserrat',sans-serif; font-size:10px; color:#888;"><strong style="color:#555; letter-spacing:1px; text-transform:uppercase; font-size:9px;">Care:</strong> {{ item['care'] }}</p>
+                    {% endif %}
                 </div>
             </div>
             {% endfor %}
         </div>
-        
-        <div class="text-center mt-20 fade-in">
-            <a href="/lookbook" class="inline-block border border-brand-charcoal text-brand-charcoal px-10 py-3 uppercase tracking-widest text-sm hover:bg-brand-charcoal hover:text-brand-ivory transition-all duration-300">Back to Lookbook</a>
+
+        <!-- Green CTA Button -->
+        <div style="text-align:center; margin-bottom: 48px;">
+            <a href="/book-appointment" class="btn-green">Shop The Collection</a>
+        </div>
+
+        <!-- Back link -->
+        <div style="text-align:center;">
+            <a href="/lookbook" style="font-family:'Montserrat',sans-serif; font-size:11px; letter-spacing:2px; text-transform:uppercase; color:#1A1A1A; text-decoration:underline; text-underline-offset:4px;">← All Collections</a>
         </div>
     </div>
-</div>
+</section>
+
 {% endblock %}

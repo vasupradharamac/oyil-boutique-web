@@ -3,38 +3,29 @@
 {% block title %}Sign Up | Oyil Boutique{% endblock %}
 
 {% block content %}
-<div class="py-24 flex items-center justify-center min-h-[80vh]">
-    <div class="bg-white/80 backdrop-blur-md p-10 md:p-14 shadow-sm border border-brand-champagne max-w-lg w-full fade-in">
-        <div class="text-center mb-10">
-            <h1 class="text-4xl font-serif mb-4 text-brand-charcoal">Create Account</h1>
-            <p class="text-gray-500 font-light">Join us to access exclusive collections, save your wishlist, and manage appointments.</p>
+<div style="background:#F5EFE4; min-height: 80vh; display:flex; align-items:center; justify-content:center; padding: 60px 24px;">
+    <div style="background:#fff; padding: 56px; max-width: 480px; width:100%; box-shadow: 0 2px 24px rgba(0,0,0,0.06);">
+        <div style="text-align:center; margin-bottom:40px;">
+            <h1 style="font-family:'Cormorant Garamond',serif; font-size:40px; font-weight:400; color:#1A1A1A; margin-bottom:12px;">Create Account</h1>
+            <p style="font-family:'Montserrat',sans-serif; font-size:11px; color:#888; letter-spacing:1px; line-height:1.8;">Join us to access exclusive collections and manage your appointments.</p>
         </div>
-
-        <form action="/signup" method="POST" class="space-y-6">
-            <div>
-                <label for="name" class="block text-sm uppercase tracking-widest text-brand-charcoal mb-2">Full Name</label>
-                <input type="text" id="name" name="name" required class="w-full bg-transparent border-b border-gray-300 py-2 focus:outline-none focus:border-brand-gold transition-colors font-light text-brand-charcoal">
+        <form action="/signup" method="POST">
+            <div style="margin-bottom:28px;">
+                <label style="display:block; font-family:'Montserrat',sans-serif; font-size:9px; letter-spacing:2px; text-transform:uppercase; color:#666; margin-bottom:8px;">Full Name</label>
+                <input type="text" name="name" required style="width:100%; border:none; border-bottom:1px solid #ccc; padding:8px 0; font-family:'Montserrat',sans-serif; font-size:13px; color:#1A1A1A; background:transparent; outline:none;">
             </div>
-
-            <div>
-                <label for="identifier" class="block text-sm uppercase tracking-widest text-brand-charcoal mb-2">Email or Phone Number</label>
-                <input type="text" id="identifier" name="identifier" required class="w-full bg-transparent border-b border-gray-300 py-2 focus:outline-none focus:border-brand-gold transition-colors font-light text-brand-charcoal">
+            <div style="margin-bottom:28px;">
+                <label style="display:block; font-family:'Montserrat',sans-serif; font-size:9px; letter-spacing:2px; text-transform:uppercase; color:#666; margin-bottom:8px;">Email or Phone Number</label>
+                <input type="text" name="identifier" required style="width:100%; border:none; border-bottom:1px solid #ccc; padding:8px 0; font-family:'Montserrat',sans-serif; font-size:13px; color:#1A1A1A; background:transparent; outline:none;">
             </div>
-            
-            <div>
-                <label for="password" class="block text-sm uppercase tracking-widest text-brand-charcoal mb-2">Password</label>
-                <input type="password" id="password" name="password" required class="w-full bg-transparent border-b border-gray-300 py-2 focus:outline-none focus:border-brand-gold transition-colors font-light text-brand-charcoal">
+            <div style="margin-bottom:36px;">
+                <label style="display:block; font-family:'Montserrat',sans-serif; font-size:9px; letter-spacing:2px; text-transform:uppercase; color:#666; margin-bottom:8px;">Password</label>
+                <input type="password" name="password" required style="width:100%; border:none; border-bottom:1px solid #ccc; padding:8px 0; font-family:'Montserrat',sans-serif; font-size:13px; color:#1A1A1A; background:transparent; outline:none;">
             </div>
-
-            <div class="pt-6 text-center">
-                <button type="submit" class="bg-brand-charcoal text-brand-ivory px-12 py-4 uppercase tracking-widest text-sm hover:bg-brand-champagne hover:text-brand-charcoal transition-colors duration-300 w-full">
-                    Register
-                </button>
-            </div>
+            <button type="submit" class="btn-green" style="width:100%; text-align:center;">Create Account</button>
         </form>
-        
-        <div class="mt-8 text-center text-sm font-light text-gray-500">
-            Already have an account? <a href="/login" class="text-brand-gold hover:underline">Sign In</a>
+        <div style="text-align:center; margin-top:24px; font-family:'Montserrat',sans-serif; font-size:11px; color:#888;">
+            Already have an account? <a href="/login" style="color:#2D4A1E; text-underline-offset:3px; text-decoration:underline;">Sign In</a>
         </div>
     </div>
 </div>

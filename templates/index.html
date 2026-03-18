@@ -1,55 +1,107 @@
 {% extends "base.html" %}
 
+{% block title %}Oyil Boutique | Luxury Indian Womenswear — Madurai{% endblock %}
+
 {% block content %}
-<div class="relative w-full h-[80vh] bg-brand-charcoal overflow-hidden">
-    <!-- Hero Image -->
-    <div class="absolute inset-0 bg-cover bg-center opacity-60 mix-blend-overlay" style="background-image: url('/static/images/hero.png');"></div>
-    <div class="absolute inset-0 bg-gradient-to-b from-brand-charcoal/30 to-brand-charcoal/80"></div>
-    
-    <div class="relative h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-center items-center text-center">
-        <h1 class="text-brand-ivory text-5xl md:text-7xl font-serif tracking-wide mb-6 fade-in">Elegance in Every Thread</h1>
-        <p class="text-brand-champagne text-lg md:text-xl font-light max-w-2xl mb-10 fade-in">Discover the pinnacle of modern luxury bridal wear. Oyil Boutique curates exclusive collections for your unforgettable day.</p>
-        <div class="fade-in">
-            <a href="/lookbook" class="inline-block bg-brand-ivory text-brand-charcoal px-10 py-4 uppercase tracking-widest text-sm hover:bg-brand-champagne transition-colors duration-300">Explore Collection</a>
+
+<!-- ===== HERO: Full bleed cinematic ===== -->
+<section style="position: relative; width: 100%; height: 92vh; overflow: hidden; background: #0a0a0a;">
+    <img src="/static/images/hero.png" alt="Oyil Boutique" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 0.85;">
+    <!-- Gradient overlay -->
+    <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.1) 100%);"></div>
+    <!-- Text — bottom left like Anita Dongre -->
+    <div style="position: absolute; bottom: 60px; left: 60px; color: #fff;" class="fade-in">
+        <p style="font-family:'Montserrat',sans-serif; font-size: 10px; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 12px; opacity: 0.85;">Oyil Boutique · New Arrivals 2026</p>
+        <h1 style="font-family:'Cormorant Garamond',serif; font-size: clamp(52px, 8vw, 100px); font-weight: 300; line-height: 1.0; font-style: italic; margin-bottom: 12px;">Adorned in<br>Heritage</h1>
+        <p style="font-family:'Montserrat',sans-serif; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 24px; opacity: 0.8;">Fashion for the Indian Soul</p>
+        <a href="/lookbook" class="discover-link discover-link-white">Discover</a>
+    </div>
+</section>
+
+<!-- ===== SHOP BY CATEGORY ===== -->
+<section style="background: #F5EFE4; padding: 72px 32px;">
+    <h2 style="font-family:'Montserrat',sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 5px; text-transform: uppercase; text-align: center; margin-bottom: 48px; color: #1A1A1A;">Shop By Category</h2>
+    <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;">
+        {% set cats = [
+            ('Sarees', '/collection/sarees', '/static/images/sarees.png'),
+            ('Salwars', '/collection/salwars', '/static/images/salwars.png'),
+            ('Half Sarees', '/collection/halfsarees', '/static/images/halfsarees.png'),
+            ('Bridal Wear', '/collection/bridal', '/static/images/bridal.png')
+        ] %}
+        {% for name, href, img in cats %}
+        <a href="{{ href }}" style="display:block; text-decoration:none; group;" class="fade-in">
+            <div style="overflow:hidden; aspect-ratio: 3/4; background:#e8e0d4;">
+                <img src="{{ img }}" alt="{{ name }}" style="width:100%; height:100%; object-fit:cover; transition: transform 0.6s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+            </div>
+            <p style="font-family:'Montserrat',sans-serif; font-size:10px; font-weight:500; letter-spacing:3px; text-transform:uppercase; text-align:center; margin-top:14px; color:#1A1A1A;">{{ name }}</p>
+        </a>
+        {% endfor %}
+    </div>
+    <!-- Second row -->
+    <div style="max-width: 1200px; margin: 16px auto 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;">
+        {% set cats2 = [
+            ('Festive', '/collection/festive', '/static/images/festive.png'),
+            ('Kids', '/collection/kids', '/static/images/kids.png'),
+            ('Lookbook', '/lookbook', '/static/images/new_bridal.png'),
+            ('Book Appointment', '/book-appointment', '/static/images/new_festive.png')
+        ] %}
+        {% for name, href, img in cats2 %}
+        <a href="{{ href }}" style="display:block; text-decoration:none;" class="fade-in">
+            <div style="overflow:hidden; aspect-ratio: 3/4; background:#e8e0d4;">
+                <img src="{{ img }}" alt="{{ name }}" style="width:100%; height:100%; object-fit:cover; transition: transform 0.6s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+            </div>
+            <p style="font-family:'Montserrat',sans-serif; font-size:10px; font-weight:500; letter-spacing:3px; text-transform:uppercase; text-align:center; margin-top:14px; color:#1A1A1A;">{{ name }}</p>
+        </a>
+        {% endfor %}
+    </div>
+</section>
+
+<!-- ===== FEATURED COLLECTION — Sarees ===== -->
+<section style="background: #F5EFE4; padding: 72px 32px;">
+    <h2 style="font-family:'Montserrat',sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 5px; text-transform: uppercase; text-align: center; margin-bottom: 48px; color: #1A1A1A;">Featured Sarees</h2>
+    <div style="max-width: 1200px; margin: 0 auto;">
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 40px;">
+            {% set items = [
+                ('Ruby Red Banarasi Silk', '₹28,000', '/static/images/saree_crimson.png'),
+                ('Pastel Pink Soft Chiffon', '₹16,500', '/static/images/saree_pastel.png'),
+                ('Golden Zari Treasure', '₹22,500', '/static/images/sarees.png'),
+                ('Classic Silk Drape', '₹19,000', '/static/images/new_sarees.png')
+            ] %}
+            {% for name, price, img in items %}
+            <a href="/collection/sarees" style="text-decoration:none; color: inherit;" class="fade-in">
+                <div style="overflow:hidden; aspect-ratio:3/4; background:#e8e0d4;">
+                    <img src="{{ img }}" alt="{{ name }}" style="width:100%; height:100%; object-fit:cover; transition: transform 0.6s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                </div>
+                <p style="font-family:'Montserrat',sans-serif; font-size:10px; font-weight:500; letter-spacing:2px; text-transform:uppercase; margin-top:12px; color:#1A1A1A;">{{ name }}</p>
+                <p style="font-family:'Montserrat',sans-serif; font-size:12px; margin-top:4px; color:#555;">{{ price }}</p>
+            </a>
+            {% endfor %}
+        </div>
+        <div style="text-align:center;">
+            <a href="/collection/sarees" class="btn-green">Shop The Collection</a>
         </div>
     </div>
-</div>
+</section>
 
-<div class="py-24 bg-brand-ivory">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-3xl font-serif mb-16 fade-in">The Oyil Experience</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-            <div class="fade-in">
-                <div class="w-16 h-16 mx-auto border border-brand-gold rounded-full flex items-center justify-center mb-6">
-                    <span class="text-brand-gold text-2xl font-serif">I</span>
-                </div>
-                <h3 class="text-xl font-medium tracking-wide mb-4">Curated Selection</h3>
-                <p class="text-gray-600 font-light leading-relaxed">Handpicked designer gowns from the world's most prestigious bridal fashion houses.</p>
-            </div>
-            <div class="fade-in">
-                <div class="w-16 h-16 mx-auto border border-brand-gold rounded-full flex items-center justify-center mb-6">
-                    <span class="text-brand-gold text-2xl font-serif">II</span>
-                </div>
-                <h3 class="text-xl font-medium tracking-wide mb-4">Private Fittings</h3>
-                <p class="text-gray-600 font-light leading-relaxed">Enjoy an intimate, personalized consultation in our luxury private suites.</p>
-            </div>
-            <div class="fade-in">
-                <div class="w-16 h-16 mx-auto border border-brand-gold rounded-full flex items-center justify-center mb-6">
-                    <span class="text-brand-gold text-2xl font-serif">III</span>
-                </div>
-                <h3 class="text-xl font-medium tracking-wide mb-4">Expert Alterations</h3>
-                <p class="text-gray-600 font-light leading-relaxed">Master seamstresses ensure your gown fits flawlessly for your momentous walk down the aisle.</p>
-            </div>
-        </div>
+<!-- ===== EDITORIAL STRIP — Bridal ===== -->
+<section style="position:relative; width:100%; height: 70vh; overflow:hidden; background:#0a0a0a;">
+    <img src="/static/images/bridal.png" alt="Bridal Collection" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center top; opacity:0.8;">
+    <div style="position:absolute; inset:0; background:linear-gradient(to right, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.1) 60%, transparent 100%);"></div>
+    <div style="position:absolute; top:50%; left:60px; transform:translateY(-50%); color:#fff;" class="fade-in">
+        <h2 style="font-family:'Cormorant Garamond',serif; font-size: clamp(36px,5vw,72px); font-style:italic; font-weight:300; line-height:1.2; margin-bottom:20px;">Bridal<br>Collection</h2>
+        <a href="/collection/bridal" class="discover-link discover-link-white">Discover</a>
     </div>
-</div>
+</section>
 
-<!-- Promotional Banner -->
-<div class="relative py-32 bg-brand-champagne">
-    <div class="max-w-4xl mx-auto px-4 text-center">
-        <h2 class="text-brand-charcoal text-4xl font-serif mb-8 fade-in">Begin Your Journey</h2>
-        <p class="text-brand-charcoal/90 text-lg mb-10 font-light fade-in">Secure your private appointment and let us help you find the gown of your dreams.</p>
-        <a href="/book-appointment" class="inline-block border border-brand-charcoal text-brand-charcoal px-12 py-4 uppercase tracking-widest text-sm hover:bg-brand-charcoal hover:text-brand-champagne transition-all duration-300 fade-in">Book Now</a>
+<!-- ===== SCHEDULE AN APPOINTMENT ===== -->
+<section style="position:relative; width:100%; height:60vh; overflow:hidden; background:#1a2a1a;">
+    <img src="/static/images/festive.png" alt="Book Appointment" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; opacity:0.55;">
+    <div style="position:absolute; inset:0; background:rgba(0,0,0,0.4);"></div>
+    <div style="position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding: 0 32px;" class="fade-in">
+        <h2 style="font-family:'Montserrat',sans-serif; font-size: clamp(14px,2vw,18px); font-weight:500; letter-spacing:5px; text-transform:uppercase; color:#fff; margin-bottom:16px;">Schedule an Appointment</h2>
+        <p style="font-family:'Montserrat',sans-serif; font-size:12px; color:rgba(255,255,255,0.8); letter-spacing:1px; margin-bottom:32px; max-width:480px; line-height:1.8;">Click below to schedule a virtual or an in-store appointment at our flagship store in Madurai.</p>
+        <a href="/book-appointment" style="display:inline-block; background:#fff; color:#1A1A1A; font-family:'Montserrat',sans-serif; font-size:11px; font-weight:600; letter-spacing:3px; text-transform:uppercase; padding:14px 48px; text-decoration:none; transition:background 0.2s;" onmouseover="this.style.background='#F5EFE4'" onmouseout="this.style.background='#fff'">Book Now</a>
     </div>
-</div>
+</section>
+
 {% endblock %}
