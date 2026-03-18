@@ -42,8 +42,8 @@
         {% set cats2 = [
             ('Festive', '/collection/festive', '/static/images/festive.png'),
             ('Kids', '/collection/kids', '/static/images/kids.png'),
-            ('Lookbook', '/lookbook', '/static/images/new_bridal.png'),
-            ('Book Appointment', '/book-appointment', '/static/images/new_festive.png')
+            ('Half Sarees', '/collection/halfsarees', '/static/images/halfsarees.png'),
+            ('Salwars', '/collection/salwars', '/static/images/salwars.png')
         ] %}
         {% for name, href, img in cats2 %}
         <a href="{{ href }}" style="display:block; text-decoration:none;" class="fade-in">
@@ -65,7 +65,7 @@
                 ('Ruby Red Banarasi Silk', '₹28,000', '/static/images/saree_crimson.png'),
                 ('Pastel Pink Soft Chiffon', '₹16,500', '/static/images/saree_pastel.png'),
                 ('Golden Zari Treasure', '₹22,500', '/static/images/sarees.png'),
-                ('Classic Silk Drape', '₹19,000', '/static/images/new_sarees.png')
+                ('Classic Silk Drape', '₹19,000', '/static/images/salwars.png')
             ] %}
             {% for name, price, img in items %}
             <a href="/collection/sarees" style="text-decoration:none; color: inherit;" class="fade-in">
@@ -94,7 +94,7 @@
 </section>
 
 <!-- ===== SCHEDULE AN APPOINTMENT ===== -->
-<section style="position:relative; width:100%; height:60vh; overflow:hidden; background:#1a2a1a;">
+<section style="position:relative; width:100%; height:60vh; overflow:hidden; background:#b8943e;">
     <img src="/static/images/festive.png" alt="Book Appointment" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; opacity:0.55;">
     <div style="position:absolute; inset:0; background:rgba(0,0,0,0.4);"></div>
     <div style="position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding: 0 32px;" class="fade-in">
