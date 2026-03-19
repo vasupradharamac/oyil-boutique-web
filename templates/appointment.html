@@ -3,45 +3,52 @@
 {% block title %}Book an Appointment | Oyil Boutique{% endblock %}
 
 {% block content %}
-<div class="bg-brand-ivory py-20">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16 fade-in">
-            <h1 class="text-5xl font-serif mb-4">Book a Fitting</h1>
-            <p class="text-gray-500 font-light">Experience the height of luxury at our boutique. Schedule your personalized styling session.</p>
-        </div>
+<div class="flex flex-col lg:flex-row min-h-[90vh] bg-[#F5EFE4]">
+    <!-- Image Section -->
+    <div class="lg:w-1/2 relative min-h-[40vh] lg:min-h-full hidden md:block">
+        <img src="/static/images/festive.png" alt="Oyil Boutique Fitting" class="absolute inset-0 w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black/10"></div>
+    </div>
+    
+    <!-- Form Section -->
+    <div class="lg:w-1/2 flex items-center justify-center p-6 md:p-12 lg:p-20">
+        <div class="w-full max-w-xl bg-white p-8 md:p-14 shadow-sm border border-[#F7E6CA] fade-in">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl md:text-5xl font-serif mb-4 text-[#1A1A1A]">Book a Fitting</h1>
+                <p class="text-[#666] font-light text-xs md:text-sm tracking-wide leading-relaxed font-sans">Experience the height of luxury at our flagship store. Schedule your personalized styling session.</p>
+            </div>
 
-        <div class="bg-white p-10 md:p-14 shadow-sm border border-brand-champagne fade-in">
-            <form action="/book-appointment" method="POST" class="space-y-8">
+            <form action="/book-appointment" method="POST" class="space-y-10">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div>
-                        <label for="name" class="block text-sm uppercase tracking-widest text-brand-charcoal mb-2">Full Name</label>
-                        <input type="text" id="name" name="name" required class="w-full bg-transparent border-b border-gray-300 py-2 focus:outline-none focus:border-brand-gold transition-colors font-light text-brand-charcoal">
+                        <label for="name" class="block text-[10px] uppercase tracking-[2px] text-[#666] mb-2 font-medium font-sans">Full Name</label>
+                        <input type="text" id="name" name="name" required class="w-full bg-transparent border-b border-gray-300 py-2 focus:outline-none focus:border-[#C9A84C] transition-colors text-[#1A1A1A] text-sm font-sans">
                     </div>
                     <div>
-                        <label for="email" class="block text-sm uppercase tracking-widest text-brand-charcoal mb-2">Email Address</label>
-                        <input type="email" id="email" name="email" required class="w-full bg-transparent border-b border-gray-300 py-2 focus:outline-none focus:border-brand-gold transition-colors font-light text-brand-charcoal">
+                        <label for="email" class="block text-[10px] uppercase tracking-[2px] text-[#666] mb-2 font-medium font-sans">Email Address</label>
+                        <input type="email" id="email" name="email" required class="w-full bg-transparent border-b border-gray-300 py-2 focus:outline-none focus:border-[#C9A84C] transition-colors text-[#1A1A1A] text-sm font-sans">
                     </div>
                 </div>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div>
-                        <label for="phone" class="block text-sm uppercase tracking-widest text-brand-charcoal mb-2">Phone Number</label>
-                        <input type="tel" id="phone" name="phone" required class="w-full bg-transparent border-b border-gray-300 py-2 focus:outline-none focus:border-brand-gold transition-colors font-light text-brand-charcoal">
+                        <label for="phone" class="block text-[10px] uppercase tracking-[2px] text-[#666] mb-2 font-medium font-sans">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required class="w-full bg-transparent border-b border-gray-300 py-2 focus:outline-none focus:border-[#C9A84C] transition-colors text-[#1A1A1A] text-sm font-sans">
                     </div>
                     <div>
-                        <label for="date_requested" class="block text-sm uppercase tracking-widest text-brand-charcoal mb-2">Preferred Date</label>
-                        <input type="date" id="date_requested" name="date_requested" required class="w-full bg-transparent border-b border-gray-300 py-2 focus:outline-none focus:border-brand-gold transition-colors font-light text-gray-500">
+                        <label for="date_requested" class="block text-[10px] uppercase tracking-[2px] text-[#666] mb-2 font-medium font-sans">Preferred Date</label>
+                        <input type="date" id="date_requested" name="date_requested" required class="w-full bg-transparent border-b border-gray-300 py-2 focus:outline-none focus:border-[#C9A84C] transition-colors text-[#666] text-sm cursor-pointer font-sans">
                     </div>
                 </div>
 
                 <div>
-                    <label for="notes" class="block text-sm uppercase tracking-widest text-brand-charcoal mb-2">Additional Notes</label>
-                    <textarea id="notes" name="notes" rows="4" placeholder="Tell us about your wedding date, venue, or any specific styles you loved..." class="w-full bg-transparent border-b border-gray-300 py-2 focus:outline-none focus:border-brand-gold transition-colors font-light text-brand-charcoal resize-none"></textarea>
+                    <label for="notes" class="block text-[10px] uppercase tracking-[2px] text-[#666] mb-2 font-medium font-sans">Additional Notes</label>
+                    <textarea id="notes" name="notes" rows="3" placeholder="Tell us about your wedding date, venue, or specific styles..." class="w-full bg-transparent border-b border-gray-300 py-2 focus:outline-none focus:border-[#C9A84C] transition-colors text-[#1A1A1A] text-sm font-light resize-none font-sans"></textarea>
                 </div>
 
-                <div class="text-center pt-6">
-                    <button type="submit" class="bg-brand-charcoal text-brand-ivory px-12 py-4 uppercase tracking-widest text-sm hover:bg-brand-gold transition-colors duration-300 w-full md:w-auto">
-                        Request Appointment
+                <div class="pt-6">
+                    <button type="submit" class="w-full bg-[#1A1A1A] hover:bg-[#F7E6CA] hover:text-[#1A1A1A] text-white py-4 text-[11px] uppercase tracking-[3px] font-semibold transition-colors duration-300 border border-transparent hover:border-[#1A1A1A] font-sans">
+                        Submit Request
                     </button>
                 </div>
             </form>

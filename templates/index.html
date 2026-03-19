@@ -5,73 +5,96 @@
 {% block content %}
 
 <!-- ===== HERO: Full bleed cinematic ===== -->
-<section style="position: relative; width: 100%; height: 92vh; overflow: hidden; background: #0a0a0a;">
-    <img src="/static/images/hero.png" alt="Oyil Boutique" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 0.85;">
+<section class="relative w-full min-h-[70vh] md:h-[92vh] overflow-hidden bg-[#0a0a0a]">
+    <img src="/static/images/hero.jpeg" alt="Oyil Boutique"
+        class="absolute inset-0 w-full h-full object-cover object-center opacity-85">
     <!-- Gradient overlay -->
-    <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.1) 100%);"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-black/10">
+    </div>
     <!-- Text — bottom left like Anita Dongre -->
     <div style="position: absolute; bottom: 60px; left: 60px; color: #fff;" class="fade-in">
-        <p style="font-family:'Montserrat',sans-serif; font-size: 10px; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 12px; opacity: 0.85;">Oyil Boutique · New Arrivals 2026</p>
-        <h1 style="font-family:'Cormorant Garamond',serif; font-size: clamp(52px, 8vw, 100px); font-weight: 300; line-height: 1.0; font-style: italic; margin-bottom: 12px;">Adorned in<br>Heritage</h1>
-        <p style="font-family:'Montserrat',sans-serif; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 24px; opacity: 0.8;">Fashion for the Indian Soul</p>
+        <p
+            style="font-family:'Montserrat',sans-serif; font-size: 10px; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 12px; opacity: 0.85;">
+            Oyil Boutique · New Arrivals 2026</p>
+        <h1
+            style="font-family:'Cormorant Garamond',serif; font-size: clamp(52px, 8vw, 100px); font-weight: 300; line-height: 1.0; font-style: italic; margin-bottom: 12px;">
+            Adorned in<br>Heritage</h1>
+        <p
+            style="font-family:'Montserrat',sans-serif; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 24px; opacity: 0.8;">
+            Fashion for the Indian Soul</p>
         <a href="/lookbook" class="discover-link discover-link-white">Discover</a>
     </div>
 </section>
 
 <!-- ===== SHOP BY CATEGORY ===== -->
-<section style="background: #F5EFE4; padding: 72px 32px;">
-    <h2 style="font-family:'Montserrat',sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 5px; text-transform: uppercase; text-align: center; margin-bottom: 48px; color: #1A1A1A;">Shop By Category</h2>
-    <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;">
+<section class="bg-[#F5EFE4] py-16 px-4 md:px-8">
+    <h2 class="font-sans text-xs md:text-[13px] font-medium tracking-[5px] uppercase text-center mb-10 md:mb-12 text-[#1A1A1A]">
+        Shop By Category</h2>
+    <div class="max-w-[1200px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
         {% set cats = [
-            ('Sarees', '/collection/sarees', '/static/images/sarees.png'),
-            ('Salwars', '/collection/salwars', '/static/images/salwars.png'),
-            ('Half Sarees', '/collection/halfsarees', '/static/images/halfsarees.png'),
-            ('Bridal Wear', '/collection/bridal', '/static/images/bridal.png')
+        ('Sarees', '/collection/sarees', '/static/images/sarees.png'),
+        ('Salwars', '/collection/salwars', '/static/images/salwars.png'),
+        ('Half Sarees', '/collection/halfsarees', '/static/images/halfsarees.png'),
+        ('Bridal Wear', '/collection/bridal', '/static/images/bridal.png')
         ] %}
         {% for name, href, img in cats %}
-        <a href="{{ href }}" style="display:block; text-decoration:none; group;" class="fade-in">
+        <a href="{{ href }}" style="display:block; text-decoration:none;" class="fade-in group">
             <div style="overflow:hidden; aspect-ratio: 3/4; background:#e8e0d4;">
-                <img src="{{ img }}" alt="{{ name }}" style="width:100%; height:100%; object-fit:cover; transition: transform 0.6s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                <img src="{{ img }}" alt="{{ name }}"
+                    style="width:100%; height:100%; object-fit:cover; transition: transform 0.6s ease;"
+                    onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
             </div>
-            <p style="font-family:'Montserrat',sans-serif; font-size:10px; font-weight:500; letter-spacing:3px; text-transform:uppercase; text-align:center; margin-top:14px; color:#1A1A1A;">{{ name }}</p>
+            <p
+                style="font-family:'Montserrat',sans-serif; font-size:10px; font-weight:500; letter-spacing:3px; text-transform:uppercase; text-align:center; margin-top:14px; color:#1A1A1A;">
+                {{ name }}</p>
         </a>
         {% endfor %}
     </div>
     <!-- Second row -->
-    <div style="max-width: 1200px; margin: 16px auto 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;">
+    <div class="max-w-[1200px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-4 md:mt-6">
         {% set cats2 = [
-            ('Festive', '/collection/festive', '/static/images/festive.png'),
-            ('Kids', '/collection/kids', '/static/images/kids.png')
+        ('Festive', '/collection/festive', '/static/images/festive.png'),
+        ('Kids', '/collection/kids', '/static/images/kids.png')
         ] %}
         {% for name, href, img in cats2 %}
         <a href="{{ href }}" style="display:block; text-decoration:none;" class="fade-in">
             <div style="overflow:hidden; aspect-ratio: 3/4; background:#e8e0d4;">
-                <img src="{{ img }}" alt="{{ name }}" style="width:100%; height:100%; object-fit:cover; transition: transform 0.6s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                <img src="{{ img }}" alt="{{ name }}"
+                    style="width:100%; height:100%; object-fit:cover; transition: transform 0.6s ease;"
+                    onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
             </div>
-            <p style="font-family:'Montserrat',sans-serif; font-size:10px; font-weight:500; letter-spacing:3px; text-transform:uppercase; text-align:center; margin-top:14px; color:#1A1A1A;">{{ name }}</p>
+            <p
+                style="font-family:'Montserrat',sans-serif; font-size:10px; font-weight:500; letter-spacing:3px; text-transform:uppercase; text-align:center; margin-top:14px; color:#1A1A1A;">
+                {{ name }}</p>
         </a>
         {% endfor %}
     </div>
 </section>
 
 <!-- ===== FEATURED COLLECTION — Sarees ===== -->
-<section style="background: #F5EFE4; padding: 72px 32px;">
-    <h2 style="font-family:'Montserrat',sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 5px; text-transform: uppercase; text-align: center; margin-bottom: 48px; color: #1A1A1A;">Featured Sarees</h2>
-    <div style="max-width: 1200px; margin: 0 auto;">
-        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 40px;">
+<section class="bg-[#F5EFE4] py-16 px-4 md:px-8">
+    <h2 class="font-sans text-xs md:text-[13px] font-medium tracking-[5px] uppercase text-center mb-10 md:mb-12 text-[#1A1A1A]">
+        Featured Sarees</h2>
+    <div class="max-w-[1200px] mx-auto">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-10">
             {% set items = [
-                ('Ruby Red Banarasi Silk', '₹28,000', '/static/images/saree_crimson.png'),
-                ('Pastel Pink Soft Chiffon', '₹16,500', '/static/images/saree_pastel.png'),
-                ('Golden Zari Treasure', '₹22,500', '/static/images/sarees.png'),
-                ('Classic Silk Drape', '₹19,000', '/static/images/new_sarees.png')
+            ('Ruby Red Banarasi Silk', '₹28,000', '/static/images/saree_crimson.png'),
+            ('Pastel Pink Soft Chiffon', '₹16,500', '/static/images/saree_pastel.png'),
+            ('Golden Zari Treasure', '₹22,500', '/static/images/sarees.png'),
+            ('Classic Silk Drape', '₹19,000', '/static/images/new_sarees.png')
             ] %}
             {% for name, price, img in items %}
             <a href="/collection/sarees" style="text-decoration:none; color: inherit;" class="fade-in">
                 <div style="overflow:hidden; aspect-ratio:3/4; background:#e8e0d4;">
-                    <img src="{{ img }}" alt="{{ name }}" style="width:100%; height:100%; object-fit:cover; transition: transform 0.6s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                    <img src="{{ img }}" alt="{{ name }}"
+                        style="width:100%; height:100%; object-fit:cover; transition: transform 0.6s ease;"
+                        onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
                 </div>
-                <p style="font-family:'Montserrat',sans-serif; font-size:10px; font-weight:500; letter-spacing:2px; text-transform:uppercase; margin-top:12px; color:#1A1A1A;">{{ name }}</p>
-                <p style="font-family:'Montserrat',sans-serif; font-size:12px; margin-top:4px; color:#555;">{{ price }}</p>
+                <p
+                    style="font-family:'Montserrat',sans-serif; font-size:10px; font-weight:500; letter-spacing:2px; text-transform:uppercase; margin-top:12px; color:#1A1A1A;">
+                    {{ name }}</p>
+                <p style="font-family:'Montserrat',sans-serif; font-size:12px; margin-top:4px; color:#555;">{{ price }}
+                </p>
             </a>
             {% endfor %}
         </div>
@@ -82,23 +105,29 @@
 </section>
 
 <!-- ===== EDITORIAL STRIP — Bridal ===== -->
-<section style="position:relative; width:100%; height: 70vh; overflow:hidden; background:#0a0a0a;">
-    <img src="/static/images/bridal.png" alt="Bridal Collection" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center top; opacity:0.8;">
-    <div style="position:absolute; inset:0; background:linear-gradient(to right, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.1) 60%, transparent 100%);"></div>
-    <div style="position:absolute; top:50%; left:60px; transform:translateY(-50%); color:#fff;" class="fade-in">
-        <h2 style="font-family:'Cormorant Garamond',serif; font-size: clamp(36px,5vw,72px); font-style:italic; font-weight:300; line-height:1.2; margin-bottom:20px;">Bridal<br>Collection</h2>
-        <a href="/collection/bridal" class="discover-link discover-link-white">Discover</a>
+<section class="relative w-full h-[50vh] md:h-[70vh] overflow-hidden bg-[#0a0a0a]">
+    <img src="/static/images/bridal1.jpeg" alt="Bridal Collection"
+        class="absolute inset-0 w-full h-full object-cover object-top opacity-80">
+    <div class="absolute inset-0 bg-gradient-to-r from-black/60 via-black/10 to-transparent"></div>
+    <div class="absolute top-1/2 left-6 md:left-14 -translate-y-1/2 text-white fade-in">
+        <h2 class="font-serif text-4xl md:text-6xl lg:text-[72px] italic font-light leading-tight mb-4 md:mb-6">Bridal<br>Collection</h2>
+        <a href="/collection/bridal" class="font-sans text-[11px] font-semibold tracking-[2px] uppercase text-white hover:text-[#F7E6CA] underline underline-offset-4 transition-colors">Discover</a>
     </div>
 </section>
 
 <!-- ===== SCHEDULE AN APPOINTMENT ===== -->
-<section style="position:relative; width:100%; height:60vh; overflow:hidden; background:#F7E6CA;">
-    <img src="/static/images/festive.png" alt="Book Appointment" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; opacity:0.55;">
-    <div style="position:absolute; inset:0; background:rgba(0,0,0,0.4);"></div>
-    <div style="position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding: 0 32px;" class="fade-in">
-        <h2 style="font-family:'Montserrat',sans-serif; font-size: clamp(14px,2vw,18px); font-weight:500; letter-spacing:5px; text-transform:uppercase; color:#fff; margin-bottom:16px;">Schedule an Appointment</h2>
-        <p style="font-family:'Montserrat',sans-serif; font-size:12px; color:rgba(255,255,255,0.8); letter-spacing:1px; margin-bottom:32px; max-width:480px; line-height:1.8;">Click below to schedule a virtual or an in-store appointment at our flagship store in Madurai.</p>
-        <a href="/book-appointment" style="display:inline-block; background:#fff; color:#1A1A1A; font-family:'Montserrat',sans-serif; font-size:11px; font-weight:600; letter-spacing:3px; text-transform:uppercase; padding:14px 48px; text-decoration:none; transition:background 0.2s;" onmouseover="this.style.background='#F5EFE4'" onmouseout="this.style.background='#fff'">Book Now</a>
+<section class="relative w-full h-[50vh] md:h-[60vh] overflow-hidden bg-[#F7E6CA]">
+    <img src="/static/images/festive.png" alt="Book Appointment"
+        class="absolute inset-0 w-full h-full object-cover object-center opacity-55">
+    <div class="absolute inset-0 bg-black/40"></div>
+    <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-6 md:px-8 fade-in">
+        <h2 class="font-sans text-sm md:text-lg font-medium tracking-[5px] uppercase text-white mb-4">
+            Schedule an Appointment</h2>
+        <p class="font-sans text-[11px] md:text-xs text-white/80 tracking-[1px] mb-8 max-w-[480px] leading-[1.8]">
+            Click below to schedule a virtual or an in-store appointment at our flagship store in Madurai.</p>
+        <a href="/book-appointment"
+            class="inline-block bg-white hover:bg-[#F5EFE4] text-[#1A1A1A] font-sans text-xs font-semibold tracking-[3px] uppercase px-10 md:px-12 py-3.5 transition-colors duration-200">
+            Book Now</a>
     </div>
 </section>
 
