@@ -27,7 +27,8 @@
                 <!-- Links -->
                 <div class="hidden md:flex space-x-8 items-center">
                     <a href="/" class="text-sm uppercase tracking-widest hover:text-brand-gold transition-colors">Home</a>
-                    <a href="/lookbook" class="text-sm uppercase tracking-widest hover:text-brand-gold transition-colors">Lookbook</a>
+                    <a href="/lookbook" class="text-sm uppercase tracking-widest hover:text-brand-gold transition-colors">Collections</a>
+                    <a href="/our-story" class="text-sm uppercase tracking-widest hover:text-brand-gold transition-colors">Our Story</a>
                     <a href="/contact" class="text-sm uppercase tracking-widest hover:text-brand-gold transition-colors">Contact</a>
                     {% if request.cookies.get("user_session") %}
                     <a href="/logout" class="text-sm uppercase tracking-widest hover:text-brand-gold transition-colors">Logout ({{ request.cookies.get("user_session") }})</a>
@@ -50,7 +51,8 @@
         <div id="mobile-menu" class="md:hidden hidden bg-brand-ivory border-t border-brand-champagne pb-4">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <a href="/" class="block px-3 py-2 text-base font-medium text-brand-charcoal hover:text-brand-gold">Home</a>
-                <a href="/lookbook" class="block px-3 py-2 text-base font-medium text-brand-charcoal hover:text-brand-gold">Lookbook</a>
+                <a href="/lookbook" class="block px-3 py-2 text-base font-medium text-brand-charcoal hover:text-brand-gold">Collections</a>
+                <a href="/our-story" class="block px-3 py-2 text-base font-medium text-brand-charcoal hover:text-brand-gold">Our Story</a>
                 <a href="/contact" class="block px-3 py-2 text-base font-medium text-brand-charcoal hover:text-brand-gold">Contact</a>
                 {% if request.cookies.get("user_session") %}
                 <a href="/logout" class="block px-3 py-2 text-base font-medium text-brand-charcoal hover:text-brand-gold">Logout</a>

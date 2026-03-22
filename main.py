@@ -160,6 +160,69 @@ async def book_appointment(
     db.commit()
     return templates.TemplateResponse(request, "success.html", {"message": "Your appointment request has been received. We will contact you shortly to confirm."})
 
+@app.get("/our-story", response_class=HTMLResponse)
+async def our_story(request: Request):
+    return templates.TemplateResponse(request, "our_story.html")
+
+PRODUCTS = [
+    {
+        "name": "Ruby Red Banarasi Silk",
+        "price": "₹28,000",
+        "image": "/static/images/saree_crimson.png",
+        "material": "Pure Handwoven Banarasi Silk with Gold Zari",
+        "care": "Strictly Dry Clean Only",
+        "category": "Sarees",
+        "category_slug": "sarees",
+    },
+    {
+        "name": "Pastel Pink Soft Chiffon",
+        "price": "₹16,500",
+        "image": "/static/images/saree_pastel.png",
+        "material": "Premium Lightweight Chiffon with Silver Sequins",
+        "care": "Gentle Hand Wash / Dry Clean",
+        "category": "Sarees",
+        "category_slug": "sarees",
+    },
+    {
+        "name": "Golden Zari Treasure",
+        "price": "₹22,500",
+        "image": "/static/images/sarees.png",
+        "material": "Heavy Brocade Banarasi Silk",
+        "care": "Strictly Dry Clean Only",
+        "category": "Sarees",
+        "category_slug": "sarees",
+    },
+    {
+        "name": "Deep Crimson Bridal Lehenga",
+        "price": "₹85,000",
+        "image": "/static/images/bridal.png",
+        "material": "Pure Velvet with Hand Embroidery",
+        "care": "Strictly Dry Clean Only",
+        "category": "Bridal Wear",
+        "category_slug": "bridal",
+    },
+    {
+        "name": "Gold Threadwork Lehenga",
+        "price": "₹35,000",
+        "image": "/static/images/festive.png",
+        "material": "Net with Heavy Gold Threadwork",
+        "care": "Dry Clean Only",
+        "category": "Festive",
+        "category_slug": "festive",
+    },
+]
+
+@app.get("/product/{product_id}", response_class=HTMLResponse)
+async def product_detail(request: Request, product_id: int):
+    if product_id < 1 or product_id > len(PRODUCTS):
+        return RedirectResponse(url="/lookbook")
+    product = PRODUCTS[product_id - 1]
+    related_items = [p for p in PRODUCTS if p != product][:3]
+    return templates.TemplateResponse(request, "product_detail.html", {
+        "product": product,
+        "related_items": related_items,
+    })
+
 @app.get("/contact", response_class=HTMLResponse)
 async def contact_form(request: Request):
     return templates.TemplateResponse(request, "contact.html")

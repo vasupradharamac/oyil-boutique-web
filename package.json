@@ -12,5 +12,8 @@
   "devDependencies": {
     "@tailwindcss/cli": "^4.2.1",
     "tailwindcss": "^4.2.1"
+  },
+  "dependencies": {
+    "@google/stitch-sdk": "^0.0.3"
   }
 }

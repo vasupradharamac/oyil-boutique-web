@@ -1,0 +1,144 @@
+{% extends "base.html" %}
+
+{% block title %}Our Story | Oyil Boutique{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<div class="relative w-full h-[70vh] bg-brand-charcoal overflow-hidden">
+    <div class="absolute inset-0 bg-cover bg-center opacity-50" style="background-image: url('/static/images/hero.png');"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-brand-charcoal/20 to-brand-charcoal/80"></div>
+    <div class="relative h-full flex flex-col justify-end items-start max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+        <p class="text-brand-champagne text-sm uppercase tracking-widest mb-4 fade-in">Our Story</p>
+        <h1 class="text-brand-ivory text-5xl md:text-6xl font-serif tracking-wide fade-in">Weaving Dreams<br>Since 2013</h1>
+    </div>
+</div>
+
+<!-- Brand Story -->
+<div class="py-24 bg-brand-ivory">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p class="text-brand-gold text-sm uppercase tracking-widest mb-6 fade-in">Heritage &amp; Craftsmanship</p>
+        <h2 class="text-4xl font-serif mb-10 fade-in">A Legacy of Elegance</h2>
+        <div class="text-gray-600 font-light leading-relaxed space-y-6 fade-in text-lg">
+            <p>
+                Born in the cultural heart of Madurai, Tamil Nadu, Oyil Boutique was founded in 2013 with a singular vision — to bring the finest Indian ethnic fashion to women who appreciate the beauty of tradition blended with contemporary elegance.
+            </p>
+            <p>
+                Our name, <em>"Oyil,"</em> draws from the graceful Tamil dance form, embodying the fluidity, beauty, and artistic expression that defines our brand. Every garment we curate tells a story — of skilled artisans, of time-honoured techniques passed down through generations, and of the rich textile heritage of South India.
+            </p>
+            <p>
+                From handpicked Kanchipuram silks to contemporary designer salwars, from bridal masterpieces to everyday elegance — we believe every woman deserves to feel extraordinary. Our commitment to quality, authenticity, and personal service has made us a trusted name for hundreds of brides and fashion-conscious women across Tamil Nadu and beyond.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Values Grid -->
+<div class="py-24 bg-brand-champagne/30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <p class="text-brand-gold text-sm uppercase tracking-widest mb-4 fade-in">What We Stand For</p>
+            <h2 class="text-4xl font-serif fade-in">Our Values</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div class="text-center fade-in">
+                <div class="w-20 h-20 mx-auto border border-brand-gold rounded-full flex items-center justify-center mb-8">
+                    <span class="text-brand-gold text-3xl font-serif">I</span>
+                </div>
+                <h3 class="text-xl font-serif mb-4 tracking-wide">Authenticity</h3>
+                <p class="text-gray-600 font-light leading-relaxed">Every garment is sourced directly from master weavers and designers, ensuring genuine craftsmanship in every thread.</p>
+            </div>
+            <div class="text-center fade-in">
+                <div class="w-20 h-20 mx-auto border border-brand-gold rounded-full flex items-center justify-center mb-8">
+                    <span class="text-brand-gold text-3xl font-serif">II</span>
+                </div>
+                <h3 class="text-xl font-serif mb-4 tracking-wide">Quality</h3>
+                <p class="text-gray-600 font-light leading-relaxed">We curate only the finest silks, fabrics, and embroideries — each piece rigorously selected to meet our exacting standards.</p>
+            </div>
+            <div class="text-center fade-in">
+                <div class="w-20 h-20 mx-auto border border-brand-gold rounded-full flex items-center justify-center mb-8">
+                    <span class="text-brand-gold text-3xl font-serif">III</span>
+                </div>
+                <h3 class="text-xl font-serif mb-4 tracking-wide">Personal Service</h3>
+                <p class="text-gray-600 font-light leading-relaxed">Our experienced stylists offer intimate, one-on-one consultations to find the perfect ensemble for every occasion.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Timeline -->
+<div class="py-24 bg-brand-ivory">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <p class="text-brand-gold text-sm uppercase tracking-widest mb-4 fade-in">Our Journey</p>
+            <h2 class="text-4xl font-serif fade-in">Milestones</h2>
+        </div>
+        <div class="relative">
+            <!-- Timeline line -->
+            <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-px bg-brand-champagne"></div>
+
+            <!-- 2013 -->
+            <div class="relative flex items-center justify-end md:justify-start mb-12 fade-in">
+                <div class="w-full md:w-5/12 pr-8 md:pr-0 md:pl-0 text-right md:text-right">
+                    <span class="text-brand-gold font-serif text-xl">2013</span>
+                    <h3 class="text-lg font-medium mt-1 mb-2">The Beginning</h3>
+                    <p class="text-gray-500 font-light text-sm">Oyil Boutique opens its doors in Madurai's Anna Nagar, offering a curated selection of bridal sarees and silk wear.</p>
+                </div>
+                <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-brand-gold rounded-full border-2 border-brand-ivory"></div>
+                <div class="hidden md:block w-5/12 pl-8"></div>
+            </div>
+
+            <!-- 2016 -->
+            <div class="relative flex items-center justify-start mb-12 fade-in">
+                <div class="hidden md:block w-5/12 pr-8"></div>
+                <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-brand-gold rounded-full border-2 border-brand-ivory"></div>
+                <div class="w-full md:w-5/12 pl-8">
+                    <span class="text-brand-gold font-serif text-xl">2016</span>
+                    <h3 class="text-lg font-medium mt-1 mb-2">Expanding Collections</h3>
+                    <p class="text-gray-500 font-light text-sm">Launched the Festive and Kids collections, becoming a trusted destination for family ethnic wear.</p>
+                </div>
+            </div>
+
+            <!-- 2019 -->
+            <div class="relative flex items-center justify-end md:justify-start mb-12 fade-in">
+                <div class="w-full md:w-5/12 pr-8 md:pr-0 md:pl-0 text-right md:text-right">
+                    <span class="text-brand-gold font-serif text-xl">2019</span>
+                    <h3 class="text-lg font-medium mt-1 mb-2">Private Fitting Suites</h3>
+                    <p class="text-gray-500 font-light text-sm">Introduced exclusive private fitting rooms for bridal consultations, elevating the shopping experience.</p>
+                </div>
+                <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-brand-gold rounded-full border-2 border-brand-ivory"></div>
+                <div class="hidden md:block w-5/12 pl-8"></div>
+            </div>
+
+            <!-- 2023 -->
+            <div class="relative flex items-center justify-start fade-in">
+                <div class="hidden md:block w-5/12 pr-8"></div>
+                <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-brand-gold rounded-full border-2 border-brand-ivory"></div>
+                <div class="w-full md:w-5/12 pl-8">
+                    <span class="text-brand-gold font-serif text-xl">2023</span>
+                    <h3 class="text-lg font-medium mt-1 mb-2">Digital Presence</h3>
+                    <p class="text-gray-500 font-light text-sm">Launched the digital lookbook and online appointment booking, bringing Oyil's elegance to customers across India.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Visit CTA -->
+<div class="py-24 bg-brand-charcoal text-brand-ivory">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+        <h2 class="text-4xl font-serif mb-6 fade-in">Visit Our Boutique</h2>
+        <p class="text-brand-champagne font-light text-lg mb-10 max-w-xl mx-auto fade-in">
+            Experience the Oyil difference in person. Our stylists are ready to help you discover the perfect ensemble.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center fade-in">
+            <a href="/book-appointment" class="inline-block bg-brand-gold text-brand-charcoal px-10 py-4 uppercase tracking-widest text-sm hover:bg-brand-champagne transition-colors duration-300">Book an Appointment</a>
+            <a href="/contact" class="inline-block border border-brand-champagne text-brand-champagne px-10 py-4 uppercase tracking-widest text-sm hover:bg-brand-champagne hover:text-brand-charcoal transition-all duration-300">Get Directions</a>
+        </div>
+        <div class="mt-12 text-brand-champagne/70 font-light fade-in">
+            <p>Reliance Building, 1, 2A, Anna Nagar Main Road</p>
+            <p>Madurai, Tamil Nadu – 625020</p>
+            <p class="mt-2">(+91) 85248 90839</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
