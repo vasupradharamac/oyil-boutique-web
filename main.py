@@ -1,5 +1,5 @@
 from fastapi import FastAPI, Request, Form, Depends, HTTPException
-from fastapi.responses import HTMLResponse, RedirectResponse, StreamingResponse
+from fastapi.responses import HTMLResponse, RedirectResponse, FileResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from sqlalchemy.orm import Session
@@ -19,49 +19,11 @@ app.mount("/static/js", StaticFiles(directory="static/js"), name="js")
 
 
 @app.get("/videos/{filename}")
-async def stream_video(filename: str, request: Request):
+async def stream_video(filename: str):
     video_path = os.path.join("static", "videos", filename)
     if not os.path.isfile(video_path):
         raise HTTPException(status_code=404)
-
-    file_size = os.path.getsize(video_path)
-    range_header = request.headers.get("range")
-
-    if range_header:
-        start, end = range_header.replace("bytes=", "").split("-")
-        start = int(start)
-        end = int(end) if end else file_size - 1
-        chunk_size = end - start + 1
-
-        def iter_file():
-            with open(video_path, "rb") as f:
-                f.seek(start)
-                yield f.read(chunk_size)
-
-        return StreamingResponse(
-            iter_file(),
-            status_code=206,
-            media_type="video/mp4",
-            headers={
-                "Content-Range": f"bytes {start}-{end}/{file_size}",
-                "Accept-Ranges": "bytes",
-                "Content-Length": str(chunk_size),
-            },
-        )
-
-    def iter_full():
-        with open(video_path, "rb") as f:
-            while chunk := f.read(1024 * 1024):
-                yield chunk
-
-    return StreamingResponse(
-        iter_full(),
-        media_type="video/mp4",
-        headers={
-            "Accept-Ranges": "bytes",
-            "Content-Length": str(file_size),
-        },
-    )
+    return FileResponse(video_path, media_type="video/mp4")
 
 templates = Jinja2Templates(directory="templates")
 
