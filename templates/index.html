@@ -6,11 +6,9 @@
 
 <!-- ===== HERO ===== -->
 <section class="relative w-full min-h-[320px] h-[70vh] md:h-[92vh] overflow-hidden bg-[#0a0a0a]">
-    <video autoplay muted loop playsinline
+    <video autoplay muted loop playsinline poster="/static/images/hero.png"
         style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:top center; display:block; opacity:0.85;">
-        <source src="/static/videos/hero.mp4" type="video/mp4">
-        <img src="/static/images/hero.png" alt="Oyil Boutique"
-            style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:top center; display:block;">
+        <source src="/videos/hero.mp4" type="video/mp4">
     </video>
     <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-black/10"></div>
     <div class="absolute fade-in" style="bottom:6%; left:5%; color:#fff; max-width:90%;">
@@ -33,36 +31,18 @@
             Shop By Category</h2>
     </div>
 
-    <!-- Images with gaps -->
-    <div style="max-width:1100px; margin:0 auto; padding:0 32px; display:grid; grid-template-columns: repeat(4, 1fr); gap:16px;">
-        {% set cats = [
+    <!-- All 6 categories — 2 cols on mobile, 3 on tablet, 6 on desktop -->
+    <div style="max-width:1100px; margin:0 auto; padding:0 16px; display:grid; grid-template-columns: repeat(2, 1fr); gap:12px;">
+        <style>@media(min-width:640px){.cat-grid{grid-template-columns:repeat(3,1fr)!important;}}@media(min-width:1024px){.cat-grid{grid-template-columns:repeat(6,1fr)!important;}}</style>
+        {% set allcats = [
             ('Sarees',      '/collection/sarees',     '/static/images/sarees.png'),
             ('Salwars',     '/collection/salwars',    '/static/images/salwars.png'),
             ('Half Sarees', '/collection/halfsarees', '/static/images/halfsarees.png'),
-            ('Bridal Wear', '/collection/bridal',     '/static/images/bridal.png')
+            ('Bridal Wear', '/collection/bridal',     '/static/images/bridal.png'),
+            ('Festive',     '/collection/festive',    '/static/images/festive.png'),
+            ('Kids',        '/collection/kids',       '/static/images/kids.png')
         ] %}
-        {% for name, href, img in cats %}
-        <a href="{{ href }}" style="display:block; text-decoration:none; position:relative;">
-            <div style="width:100%; aspect-ratio:1/1; overflow:hidden; background:#e8e0d4;">
-                <img src="{{ img }}" alt="{{ name }}"
-                    style="width:100%; height:100%; object-fit:cover; object-position:top center; display:block; transition:transform 0.7s ease;"
-                    onmouseover="this.style.transform='scale(1.05)'"
-                    onmouseout="this.style.transform='scale(1)'">
-            </div>
-            <p style="font-family:'Montserrat',sans-serif; font-size:10px; font-weight:500; letter-spacing:3px; text-transform:uppercase; text-align:center; color:#1A1A1A; padding:12px 0 0 0; background:#F5EFE4;">
-                {{ name }}</p>
-        </a>
-        {% endfor %}
-    </div>
-
-    <!-- Row 2: Festive + Kids — centred -->
-    <div style="max-width:1100px; margin:0 auto; padding:16px 32px 0; display:grid; grid-template-columns: repeat(4, 1fr); gap:16px;">
-        <div></div><!-- spacer -->
-        {% set cats2 = [
-            ('Festive', '/collection/festive', '/static/images/festive.png'),
-            ('Kids',    '/collection/kids',    '/static/images/kids.png')
-        ] %}
-        {% for name, href, img in cats2 %}
+        {% for name, href, img in allcats %}
         <a href="{{ href }}" style="display:block; text-decoration:none;">
             <div style="width:100%; aspect-ratio:1/1; overflow:hidden; background:#e8e0d4;">
                 <img src="{{ img }}" alt="{{ name }}"
@@ -74,7 +54,6 @@
                 {{ name }}</p>
         </a>
         {% endfor %}
-        <div></div><!-- spacer -->
     </div>
 
     <!-- Bottom breathing room before next section -->
@@ -87,12 +66,9 @@
 
 <!-- ===== EDITORIAL STRIP — Bridal (Video Hero) ===== -->
 <section class="relative w-full min-h-[320px] h-[70vh] md:h-[92vh] overflow-hidden bg-[#0a0a0a]">
-    <video autoplay muted loop playsinline
+    <video autoplay muted loop playsinline poster="/static/images/some_wedding.png"
         style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:top center; display:block; opacity:0.8;">
-        <source src="/static/videos/bridal_hero.mp4" type="video/mp4">
-        <!-- Fallback image if video doesn't load -->
-        <img src="/static/images/some_wedding.png" alt="Bridal Collection"
-            style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:top center; display:block;">
+        <source src="/videos/bridal_hero.mp4" type="video/mp4">
     </video>
     <div class="absolute inset-0 bg-gradient-to-r from-black/60 via-black/10 to-transparent"></div>
     <div class="absolute fade-in" style="top:50%; left:clamp(24px,5vw,56px); transform:translateY(-50%); color:#fff;">
@@ -114,8 +90,9 @@
             Featured Sarees</h2>
     </div>
 
-    <div style="max-width:1100px; margin:0 auto; padding:0 32px;">
-        <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-bottom:48px;">
+    <div style="max-width:1100px; margin:0 auto; padding:0 16px;">
+        <style>@media(min-width:768px){.saree-grid{grid-template-columns:repeat(4,1fr)!important;}}</style>
+        <div class="saree-grid" style="display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-bottom:48px;">
             {% set items = [
                 ('Ruby Red Banarasi Silk',   '₹28,000', '/static/images/saree_crimson.png'),
                 ('Pastel Pink Soft Chiffon', '₹16,500', '/static/images/saree_pastel.png'),
