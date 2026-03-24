@@ -3,78 +3,113 @@
 {% block title %}Contact Us | Oyil Boutique{% endblock %}
 
 {% block content %}
-<div class="bg-brand-ivory py-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16 fade-in">
-            <h1 class="text-5xl font-serif mb-4">Get in Touch</h1>
-            <p class="text-gray-500 font-light max-w-2xl mx-auto">Whether you have a question about our collections or need assistance with your order, we are here to help.</p>
+<section style="position:relative; width:100%; min-height:100vh;">
+
+    <!-- Full-bleed background -->
+    <img src="/static/images/botanical.png" alt=""
+        style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center center; display:block;">
+    <div style="position:absolute; inset:0; background:rgba(20,12,8,0.68);"></div>
+
+    <!-- Content -->
+    <div style="position:relative; z-index:1; max-width:1100px; margin:0 auto; padding:80px 32px;" class="fade-in">
+
+        <!-- Heading -->
+        <div style="text-align:center; margin-bottom:64px;">
+            <p style="font-family:'Montserrat',sans-serif; font-size:10px; font-weight:500; letter-spacing:4px; text-transform:uppercase; color:rgba(255,255,255,0.6); margin-bottom:12px;">
+                Oyil Boutique · Madurai</p>
+            <h1 style="font-family:'Cormorant Garamond',serif; font-size:clamp(36px,5vw,64px); font-weight:300; font-style:italic; color:#fff; line-height:1.1;">
+                Get in Touch</h1>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            <!-- Contact Info -->
-            <div class="fade-in">
-                <h3 class="font-serif text-3xl mb-8">Boutique Information</h3>
-                
-                <div class="space-y-8">
-                    <div>
-                        <h4 class="text-sm uppercase tracking-widest text-brand-gold mb-2">Visit Us</h4>
-                        <p class="text-gray-600 font-light leading-relaxed">
-                            Oyil Boutique<br>
-                            Reliance Building, 1, 2A<br>
-                            Anna Nagar Main Road<br>
-                            Madurai, Tamil Nadu - 625020
-                        </p>
-                    </div>
-                    
-                    <div>
-                        <h4 class="text-sm uppercase tracking-widest text-brand-gold mb-2">Boutique Hours</h4>
-                        <p class="text-gray-600 font-light leading-relaxed">
-                            Tuesday - Sunday: 10:00 AM - 9:00 PM<br>
-                            Monday: Closed
-                        </p>
-                    </div>
+        <!-- Two-column layout -->
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:start;">
 
-                    <div>
-                        <h4 class="text-sm uppercase tracking-widest text-brand-gold mb-2">Direct Contact</h4>
-                        <p class="text-gray-600 font-light leading-relaxed">
-                            Phone: (+91) 85248 90839<br>
-                            Email: support@oyilboutique.com
-                        </p>
-                    </div>
+            <!-- Left: boutique info -->
+            <div style="color:#fff; padding-top:8px;">
+                <h3 style="font-family:'Cormorant Garamond',serif; font-size:clamp(22px,2.5vw,32px); font-weight:300; margin-bottom:40px;">
+                    Boutique Information</h3>
+
+                <div style="margin-bottom:32px;">
+                    <p style="font-family:'Montserrat',sans-serif; font-size:9px; font-weight:600; letter-spacing:3px; text-transform:uppercase; color:#C9A84C; margin-bottom:10px;">Visit Us</p>
+                    <p style="font-family:'Montserrat',sans-serif; font-size:12px; color:rgba(255,255,255,0.75); line-height:1.9;">
+                        Oyil Boutique<br>
+                        Reliance Building, 1, 2A<br>
+                        Anna Nagar Main Road<br>
+                        Madurai, Tamil Nadu — 625020
+                    </p>
+                </div>
+
+                <div style="margin-bottom:32px;">
+                    <p style="font-family:'Montserrat',sans-serif; font-size:9px; font-weight:600; letter-spacing:3px; text-transform:uppercase; color:#C9A84C; margin-bottom:10px;">Boutique Hours</p>
+                    <p style="font-family:'Montserrat',sans-serif; font-size:12px; color:rgba(255,255,255,0.75); line-height:1.9;">
+                        Tuesday – Sunday: 10:00 AM – 9:00 PM<br>
+                        Monday: Closed
+                    </p>
+                </div>
+
+                <div>
+                    <p style="font-family:'Montserrat',sans-serif; font-size:9px; font-weight:600; letter-spacing:3px; text-transform:uppercase; color:#C9A84C; margin-bottom:10px;">Direct Contact</p>
+                    <p style="font-family:'Montserrat',sans-serif; font-size:12px; color:rgba(255,255,255,0.75); line-height:1.9;">
+                        Phone: (+91) 85248 90839<br>
+                        Email: support@oyilboutique.com
+                    </p>
                 </div>
             </div>
 
-            <!-- Contact Form -->
-            <div class="bg-white p-10 md:p-14 shadow-sm border border-brand-champagne fade-in">
-                <form action="/contact" method="POST" class="space-y-8">
-                    <div>
-                        <label for="name" class="block text-sm uppercase tracking-widest text-brand-charcoal mb-2">Full Name</label>
-                        <input type="text" id="name" name="name" required class="w-full bg-transparent border-b border-gray-300 py-2 focus:outline-none focus:border-brand-gold transition-colors font-light text-brand-charcoal">
-                    </div>
-                    
-                    <div>
-                        <label for="email" class="block text-sm uppercase tracking-widest text-brand-charcoal mb-2">Email Address</label>
-                        <input type="email" id="email" name="email" required class="w-full bg-transparent border-b border-gray-300 py-2 focus:outline-none focus:border-brand-gold transition-colors font-light text-brand-charcoal">
-                    </div>
-                    
-                    <div>
-                        <label for="subject" class="block text-sm uppercase tracking-widest text-brand-charcoal mb-2">Subject</label>
-                        <input type="text" id="subject" name="subject" required class="w-full bg-transparent border-b border-gray-300 py-2 focus:outline-none focus:border-brand-gold transition-colors font-light text-brand-charcoal">
+            <!-- Right: form card -->
+            <div style="background:rgba(255,255,255,0.78); padding:52px 48px; backdrop-filter:blur(4px);">
+
+                <p style="font-family:'Montserrat',sans-serif; font-size:10px; font-weight:500; letter-spacing:4px; text-transform:uppercase; color:#999; margin-bottom:12px;">
+                    Send a Message</p>
+                <h2 style="font-family:'Cormorant Garamond',serif; font-size:clamp(26px,3vw,38px); font-weight:300; font-style:italic; color:#1A1A1A; line-height:1.1; margin-bottom:36px;">
+                    We'd love to hear from you</h2>
+
+                <form action="/contact" method="POST">
+
+                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:28px; margin-bottom:28px;">
+                        <div>
+                            <label style="display:block; font-family:'Montserrat',sans-serif; font-size:9px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:#999; margin-bottom:8px;">Full Name</label>
+                            <input type="text" name="name" required
+                                style="width:100%; background:transparent; border:none; border-bottom:1px solid #c8bfb0; padding:8px 0; font-family:'Montserrat',sans-serif; font-size:13px; color:#1A1A1A; outline:none;"
+                                onfocus="this.style.borderBottomColor='#1A1A1A'"
+                                onblur="this.style.borderBottomColor='#c8bfb0'">
+                        </div>
+                        <div>
+                            <label style="display:block; font-family:'Montserrat',sans-serif; font-size:9px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:#999; margin-bottom:8px;">Email Address</label>
+                            <input type="email" name="email" required
+                                style="width:100%; background:transparent; border:none; border-bottom:1px solid #c8bfb0; padding:8px 0; font-family:'Montserrat',sans-serif; font-size:13px; color:#1A1A1A; outline:none;"
+                                onfocus="this.style.borderBottomColor='#1A1A1A'"
+                                onblur="this.style.borderBottomColor='#c8bfb0'">
+                        </div>
                     </div>
 
-                    <div>
-                        <label for="message" class="block text-sm uppercase tracking-widest text-brand-charcoal mb-2">Message</label>
-                        <textarea id="message" name="message" rows="5" required placeholder="How can we assist you today?" class="w-full bg-transparent border-b border-gray-300 py-2 focus:outline-none focus:border-brand-gold transition-colors font-light text-brand-charcoal resize-none"></textarea>
+                    <div style="margin-bottom:28px;">
+                        <label style="display:block; font-family:'Montserrat',sans-serif; font-size:9px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:#999; margin-bottom:8px;">Subject</label>
+                        <input type="text" name="subject" required
+                            style="width:100%; background:transparent; border:none; border-bottom:1px solid #c8bfb0; padding:8px 0; font-family:'Montserrat',sans-serif; font-size:13px; color:#1A1A1A; outline:none;"
+                            onfocus="this.style.borderBottomColor='#1A1A1A'"
+                            onblur="this.style.borderBottomColor='#c8bfb0'">
                     </div>
 
-                    <div class="pt-4">
-                        <button type="submit" class="bg-brand-charcoal text-brand-ivory px-10 py-4 uppercase tracking-widest text-sm hover:bg-brand-gold transition-colors duration-300 w-full">
-                            Send Message
-                        </button>
+                    <div style="margin-bottom:40px;">
+                        <label style="display:block; font-family:'Montserrat',sans-serif; font-size:9px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:#999; margin-bottom:8px;">Message</label>
+                        <textarea name="message" rows="4" required placeholder="How can we assist you today?"
+                            style="width:100%; background:transparent; border:none; border-bottom:1px solid #c8bfb0; padding:8px 0; font-family:'Montserrat',sans-serif; font-size:13px; color:#1A1A1A; outline:none; resize:none; line-height:1.7;"
+                            onfocus="this.style.borderBottomColor='#1A1A1A'"
+                            onblur="this.style.borderBottomColor='#c8bfb0'"></textarea>
                     </div>
+
+                    <button type="submit"
+                        style="width:100%; background:#1A1A1A; color:#fff; border:none; padding:16px; font-family:'Montserrat',sans-serif; font-size:11px; font-weight:600; letter-spacing:3px; text-transform:uppercase; cursor:pointer; transition:background 0.25s ease, color 0.25s ease;"
+                        onmouseover="this.style.background='#C9A84C'; this.style.color='#1A1A1A';"
+                        onmouseout="this.style.background='#1A1A1A'; this.style.color='#fff';">
+                        Send Message
+                    </button>
+
                 </form>
             </div>
+
         </div>
     </div>
-</div>
+</section>
 {% endblock %}

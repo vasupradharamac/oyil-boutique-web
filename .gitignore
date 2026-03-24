@@ -6,4 +6,4 @@ __pycache__/
 .env
 .DS_Store
 node_modules/
-static/css/output.css
+# static/css/output.css — committed so Render can serve it without a Node build step
