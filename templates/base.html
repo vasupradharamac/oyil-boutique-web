@@ -150,6 +150,15 @@
             .cat-grid  { grid-template-columns: repeat(6, 1fr); }
             .saree-grid { grid-template-columns: repeat(4, 1fr); }
         }
+
+        /* ===== CONTACT PAGE ===== */
+        .contact-form { order: 1; }
+        .contact-info { order: 2; }
+        @media (min-width: 768px) {
+            .contact-grid { grid-template-columns: 1fr 1fr; }
+            .contact-info { order: 1; }
+            .contact-form { order: 2; }
+        }
     </style>
 </head>
 <body>

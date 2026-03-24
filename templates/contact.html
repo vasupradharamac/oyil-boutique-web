@@ -22,10 +22,10 @@
         </div>
 
         <!-- Two-column layout -->
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:start;">
+        <div class="contact-grid" style="display:grid; grid-template-columns:1fr; gap:48px; align-items:start;">
 
-            <!-- Left: boutique info -->
-            <div style="color:#fff; padding-top:8px;">
+            <!-- Left: boutique info (order:2 on mobile so form appears first) -->
+            <div class="contact-info" style="color:#fff; padding-top:8px;">
                 <h3 style="font-family:'Cormorant Garamond',serif; font-size:clamp(22px,2.5vw,32px); font-weight:300; margin-bottom:40px;">
                     Boutique Information</h3>
 
@@ -57,7 +57,7 @@
             </div>
 
             <!-- Right: form card -->
-            <div style="background:rgba(255,255,255,0.78); padding:52px 48px; backdrop-filter:blur(4px);">
+            <div class="contact-form" style="background:rgba(255,255,255,0.78); padding:52px 48px; backdrop-filter:blur(4px);">
 
                 <p style="font-family:'Montserrat',sans-serif; font-size:10px; font-weight:500; letter-spacing:4px; text-transform:uppercase; color:#999; margin-bottom:12px;">
                     Send a Message</p>
