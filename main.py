@@ -39,7 +39,7 @@ COLLECTIONS = {
     "sarees": {
         "title": "Classic Sarees",
         "description": "Experience the timeless elegance of our classic sarees. Expressed through intricate weaves and luxurious pure silks.",
-        "hero": "/static/images/saree1.png",
+        "hero": "/static/images/some_wedding.png",
         "items": [
             {
                 "name": "Ruby Red Banarasi Silk", 
@@ -87,7 +87,7 @@ COLLECTIONS = {
     "kids": {
         "title": "Kids Collection",
         "description": "High-end ethnic festive wear for the little wonders in your life.",
-        "hero": "/static/images/kids1.png",
+        "hero": "/static/images/salwar1.png",
         "items": [
             {"name": "Peach Embroidered Lehenga", "price": "₹8,500", "image": "/static/images/kids.png"},
             {"name": "Royal Blue Kurta Set", "price": "₹6,000", "image": "/static/images/kids.png"},
