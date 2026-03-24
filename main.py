@@ -12,8 +12,10 @@ Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title="Oyil Boutique")
 
-# Mount static files
-app.mount("/static", StaticFiles(directory="static"), name="static")
+# Mount static files (videos served separately via range-aware endpoint)
+app.mount("/static/images", StaticFiles(directory="static/images"), name="images")
+app.mount("/static/css", StaticFiles(directory="static/css"), name="css")
+app.mount("/static/js", StaticFiles(directory="static/js"), name="js")
 
 
 @app.get("/videos/{filename}")
